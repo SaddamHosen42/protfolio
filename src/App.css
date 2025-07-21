@@ -5,7 +5,7 @@
   --gradient-primary: linear-gradient(135deg, #8b5cf6 0%, #6366f1 50%, #3b82f6 100%);
   --gradient-secondary: linear-gradient(135deg, #ff00aa 0%, #d946ef 100%);
   --gradient-accent: linear-gradient(135deg, #00ff88 0%, #10b981 100%);
-  --text-gradient: linear-gradient(135deg, #8b5cf6 0%, #c084fc 25%, #6366f1 50%, #3b82f6 75%, #8b5cf6 100%);
+  --text-gradient: linear-gradient(135deg, #8b5cf6 0%, #c084fc 35%, #6366f1 50%, #3b82f6 75%, #8b5cf6 100%);
 }
 
 /* Custom gradient text effect */

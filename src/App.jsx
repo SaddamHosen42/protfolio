@@ -1,15 +1,15 @@
-import React from 'react'
-import './App.css'
-import Hero from './Components/Hero/Hero'
-import About from './Components/About/About'
+import React from "react";
+import "./App.css";
+import Hero from "./Components/Hero/Hero";
+import About from "./Components/About/About";
 
 function App() {
   return (
-    <>
-     <Hero />
-     <About />
-    </>
-  )
+    <div>
+      <Hero />
+      <About />
+    </div>
+  );
 }
 
-export default App
+export default App;

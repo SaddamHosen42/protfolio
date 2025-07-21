@@ -1,10 +1,10 @@
 import React from 'react';
 import { motion } from 'framer-motion';//eslint-disable-line
-import { FiGithub, FiLinkedin, FiMail, FiTwitter, FiInstagram } from 'react-icons/fi';
-import { FaGoogle } from 'react-icons/fa';
-import { FaXTwitter } from 'react-icons/fa6';
+import { FiGithub, FiLinkedin, FiMail} from 'react-icons/fi';
+import { FaDownload, FaFacebook } from 'react-icons/fa';
 import Navbar from '../Navbar/Navbar';
 import image from "../../assets/my-img-removebg-copy.png";
+import { CiViewList } from 'react-icons/ci';
 
 const Hero = () => {
   const containerVariants = {
@@ -112,16 +112,19 @@ const Hero = () => {
               <motion.button
                 whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.95 }}
-                className="px-8 py-3 bg-gradient-to-r from-purple-600 to-blue-600 text-white font-semibold rounded-lg shadow-lg hover:shadow-purple-500/25 transition-all duration-300"
+                className="flex items-center gap-2 px-8 py-3 bg-gradient-to-r from-purple-600 to-blue-600 text-white font-semibold rounded-lg shadow-lg hover:shadow-purple-500/25 transition-all duration-300"
               >
+                <CiViewList size={25}/>
                 View My Work
               </motion.button>
               <motion.button
                 whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.95 }}
-                className="px-8 py-3 border-2 border-purple-500 text-purple-400 font-semibold rounded-lg hover:bg-purple-500/10 transition-all duration-300"
+                className="flex items-center gap-2 px-8 py-3 border-2 border-purple-500 text-purple-400 font-semibold rounded-lg hover:bg-purple-500/10 transition-all duration-300"
               >
+                   <FaDownload />
                 Download CV
+           
               </motion.button>
             </motion.div>
 
@@ -153,7 +156,7 @@ const Hero = () => {
                 <FiLinkedin size={24} />
               </motion.a>
               <motion.a
-                href="https://twitter.com/saddamhosen42"
+                href="https://www.facebook.com/saddamhosen4"
                 target="_blank"
                 rel="noopener noreferrer"
                 whileHover={{ scale: 1.15, y: -3 }}
@@ -161,7 +164,7 @@ const Hero = () => {
                 className="p-3 bg-gray-800/50 backdrop-blur-sm text-gray-400 hover:text-white hover:bg-sky-600/20 border border-gray-700 hover:border-sky-500 rounded-lg transition-all duration-300 shadow-lg hover:shadow-sky-500/20"
                 aria-label="Twitter Profile"
               >
-                <FaXTwitter size={24} />
+                <FaFacebook size={24} />
               </motion.a>
               <motion.a
                 href="mailto:saddam.hosen42@gmail.com"
