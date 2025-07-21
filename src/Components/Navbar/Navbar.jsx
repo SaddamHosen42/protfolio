@@ -1,7 +1,21 @@
 import React from 'react';
-import { motion } from 'framer-motion'; 
+import { motion } from 'framer-motion'; //eslint-disable-line
 
 const Navbar = () => {
+  const smoothScrollTo = (elementId) => {
+    const element = document.getElementById(elementId);
+    if (element) {
+      element.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start',
+      });
+    }
+  };
+
+  const handleNavClick = (e, sectionId) => {
+    e.preventDefault();
+    smoothScrollTo(sectionId);
+  };
   return (
     <nav className="absolute top-0 left-0 right-0 z-50 p-6">
       <div className="container mx-auto flex justify-between items-center">
@@ -9,7 +23,8 @@ const Navbar = () => {
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8 }}
-          className="text-2xl font-bold"
+          className="text-2xl font-bold cursor-pointer"
+          onClick={(e) => handleNavClick(e, 'home')}
         >
           <span className="gradient-text">Portfolio.</span>
         </motion.div>
@@ -22,28 +37,32 @@ const Navbar = () => {
         >
           <motion.a 
             href="#about" 
-            className="hover:text-purple-400 transition-colors duration-300"
+            onClick={(e) => handleNavClick(e, 'about')}
+            className="hover:text-purple-400 transition-colors duration-300 cursor-pointer"
             whileHover={{ scale: 1.05 }}
           >
             ABOUT
           </motion.a>
           <motion.a 
             href="#skills" 
-            className="hover:text-purple-400 transition-colors duration-300"
+            onClick={(e) => handleNavClick(e, 'skills')}
+            className="hover:text-purple-400 transition-colors duration-300 cursor-pointer"
             whileHover={{ scale: 1.05 }}
           >
             SKILLS
           </motion.a>
           <motion.a 
             href="#projects" 
-            className="hover:text-purple-400 transition-colors duration-300"
+            onClick={(e) => handleNavClick(e, 'projects')}
+            className="hover:text-purple-400 transition-colors duration-300 cursor-pointer"
             whileHover={{ scale: 1.05 }}
           >
             PROJECTS
           </motion.a>
           <motion.a 
             href="#contact" 
-            className="hover:text-purple-400 transition-colors duration-300"
+            onClick={(e) => handleNavClick(e, 'contact')}
+            className="hover:text-purple-400 transition-colors duration-300 cursor-pointer"
             whileHover={{ scale: 1.05 }}
           >
             CONTACT

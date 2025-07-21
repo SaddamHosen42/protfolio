@@ -1,5 +1,5 @@
 import React from 'react';
-import { motion } from 'framer-motion';
+import { motion } from 'framer-motion';//eslint-disable-line
 import { FiGithub, FiLinkedin, FiMail, FiTwitter, FiInstagram } from 'react-icons/fi';
 import { FaGoogle } from 'react-icons/fa';
 import { FaXTwitter } from 'react-icons/fa6';
