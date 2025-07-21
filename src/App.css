@@ -1,2 +1,146 @@
- @import "tailwindcss";
- @plugin "daisyui";
+@import "tailwindcss";
+
+/* Custom CSS Variables for theme colors inspired by chiragchrg.netlify.app */
+:root {
+  --gradient-primary: linear-gradient(135deg, #8b5cf6 0%, #6366f1 50%, #3b82f6 100%);
+  --gradient-secondary: linear-gradient(135deg, #ff00aa 0%, #d946ef 100%);
+  --gradient-accent: linear-gradient(135deg, #00ff88 0%, #10b981 100%);
+  --text-gradient: linear-gradient(135deg, #8b5cf6 0%, #c084fc 25%, #6366f1 50%, #3b82f6 75%, #8b5cf6 100%);
+}
+
+/* Custom gradient text effect */
+.gradient-text {
+  background: var(--text-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  background-size: 300% 300%;
+  animation: gradient-shift 4s ease infinite;
+}
+
+@keyframes gradient-shift {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+/* Improved font rendering */
+* {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Custom button styles */
+.btn-primary {
+  background: linear-gradient(135deg, #8b5cf6 0%, #6366f1 100%);
+  color: white;
+  padding: 12px 32px;
+  border-radius: 9999px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 10px 25px rgba(139, 92, 246, 0.3);
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.btn-primary:hover {
+  transform: scale(1.05);
+  box-shadow: 0 15px 35px rgba(139, 92, 246, 0.4);
+}
+
+.btn-secondary {
+  background: linear-gradient(135deg, rgba(15, 15, 35, 0.8) 0%, rgba(26, 27, 53, 0.8) 100%);
+  color: #e5e7eb;
+  padding: 12px 32px;
+  border-radius: 9999px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  border: 1px solid #2a2d47;
+  cursor: pointer;
+  backdrop-filter: blur(10px);
+  font-size: 16px;
+}
+
+.btn-secondary:hover {
+  transform: scale(1.05);
+  border-color: #8b5cf6;
+  box-shadow: 0 15px 35px rgba(139, 92, 246, 0.2);
+}
+
+/* Enhanced glass effect */
+.glass-effect {
+  backdrop-filter: blur(20px);
+  background: rgba(15, 15, 35, 0.6);
+  border: 1px solid rgba(139, 92, 246, 0.2);
+  border-radius: 16px;
+}
+
+/* Floating animation */
+@keyframes float {
+  0%, 100% { 
+    transform: translateY(0px); 
+  }
+  50% { 
+    transform: translateY(-20px); 
+  }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+/* Glow effect */
+.glow {
+  box-shadow: 0 0 30px rgba(139, 92, 246, 0.4);
+}
+
+/* Profile image glow effect */
+.profile-glow {
+  box-shadow: 
+    0 0 40px rgba(139, 92, 246, 0.4),
+    0 0 80px rgba(99, 102, 241, 0.3),
+    0 0 120px rgba(59, 130, 246, 0.2);
+  border: 2px solid rgba(139, 92, 246, 0.3);
+}
+
+/* Improved scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0f0f23;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, #8b5cf6, #6366f1);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(135deg, #a855f7, #8b5cf6);
+}
+
+/* Smooth transitions for all elements */
+* {
+  transition: all 0.3s ease;
+}
+
+/* Better text selection */
+::selection {
+  background: rgba(139, 92, 246, 0.3);
+  color: white;
+}
+
+/* Focus styles */
+*:focus {
+  outline: 2px solid #8b5cf6;
+  outline-offset: 2px;
+}
