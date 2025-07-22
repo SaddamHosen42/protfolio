@@ -1,8 +1,10 @@
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import { motion } from 'framer-motion'; //eslint-disable-line
 import Lottie from "lottie-react";
 import ContactAnimation from "../../Lottie-animation-file/Contact-Lottie-Animation.json";
 import { FiMail, FiPhone, FiMapPin, FiSend, FiUser, FiMessageSquare } from 'react-icons/fi';
+import emailjs from '@emailjs/browser';
+import { toast } from 'react-toastify';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -12,6 +14,7 @@ const Contact = () => {
     message: ''
   });
 
+  const form=useRef();
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleInputChange = (e) => {
@@ -26,14 +29,49 @@ const Contact = () => {
     e.preventDefault();
     setIsSubmitting(true);
     
-    // Simulate form submission
-    setTimeout(() => {
-      alert('Message sent successfully! I\'ll get back to you soon.');
-      setFormData({ name: '', email: '', subject: '', message: '' });
-      setIsSubmitting(false);
-    }, 1000);
+    emailjs
+      .sendForm(
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+        form.current,
+        {
+          publicKey: import.meta.env.VITE_EMAILJS_PUBLIC_KEY,
+        }
+      )
+      .then(
+        () => {
+          console.log('SUCCESS!');
+          toast.success('Message sent successfully! I\'ll get back to you soon.', {
+            position: "top-right",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "dark",
+          });
+          setFormData({ name: '', email: '', subject: '', message: '' });
+          setIsSubmitting(false);
+        },
+        (error) => {
+          console.log('FAILED...', error.text);
+          toast.error('Failed to send message. Please try again.', {
+            position: "top-right",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "dark",
+          });
+          setIsSubmitting(false);
+        },
+      );
   };
 
+ 
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -140,7 +178,7 @@ const Contact = () => {
                 </p>
               </div>
 
-              <form onSubmit={handleSubmit} className="space-y-6">
+              <form ref={form} onSubmit={handleSubmit}  className="space-y-6">
                 {/* Name Field */}
                 <motion.div
                   initial={{ opacity: 0, x: -20 }}
@@ -180,26 +218,6 @@ const Contact = () => {
                     required
                     className="w-full px-4 py-3 bg-gray-800/50 border border-gray-700 rounded-xl text-white placeholder-gray-400 focus:border-purple-500 focus:outline-none focus:ring-2 focus:ring-purple-500/20 transition-all duration-300"
                     placeholder="Enter your email address"
-                  />
-                </motion.div>
-
-                {/* Subject Field */}
-                <motion.div
-                  initial={{ opacity: 0, x: -20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.6, delay: 0.3 }}
-                >
-                  <label className="block text-white font-medium mb-2">
-                    Subject
-                  </label>
-                  <input
-                    type="text"
-                    name="subject"
-                    value={formData.subject}
-                    onChange={handleInputChange}
-                    required
-                    className="w-full px-4 py-3 bg-gray-800/50 border border-gray-700 rounded-xl text-white placeholder-gray-400 focus:border-purple-500 focus:outline-none focus:ring-2 focus:ring-purple-500/20 transition-all duration-300"
-                    placeholder="What's this about?"
                   />
                 </motion.div>
 
