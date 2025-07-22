@@ -1,7 +1,8 @@
 import React from "react";
 import { motion } from "framer-motion"; //eslint-disable-line
-import image from "../../assets/my-img-removebg-copy.png";
 import { FiGithub, FiLinkedin } from "react-icons/fi";
+import  profileAnimation from "../../Lottie-animation-file/lottie-animation.json"
+import Lottie from "lottie-react";
 
 const About = () => {
   const containerVariants = {
@@ -105,27 +106,16 @@ const About = () => {
               variants={imageVariants}
               className="flex justify-center lg:justify-center"
             >
-              <motion.div
-                whileHover={{ scale: 1.05 }}
-                className="relative w-72 h-72 md:w-80 md:h-80 rounded-2xl overflow-hidden"
-                style={{
-                  background:
-                    "linear-gradient(135deg, #8b5cf6, #06b6d4, #3b82f6)",
-                  padding: "4px",
-                  boxShadow: "0 0 40px rgba(139, 92, 246, 0.3)",
-                }}
-              >
-                <div className="w-full h-full rounded-2xl bg-black flex items-center justify-center overflow-hidden relative">
-                  <motion.img
-                    src={image}
-                    alt="Saddam Hosen - About"
-                    className="w-full h-full object-cover rounded-2xl"
-                    whileHover={{ scale: 1.1 }}
-                    transition={{ duration: 0.3 }}
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-purple-600/20 via-transparent to-cyan-400/10 rounded-2xl"></div>
-                </div>
-              </motion.div>
+              <div className="w-72 h-72 md:w-80 md:h-80 lg:w-96 lg:h-96 flex items-center justify-center">
+                <Lottie 
+                  animationData={profileAnimation} 
+                  loop={true} 
+                  className="w-full h-full max-w-sm"
+                  style={{
+                    filter: 'drop-shadow(0 0 20px rgba(139, 92, 246, 0.3))'
+                  }}
+                />
+              </div>
             </motion.div>
 
             {/* Right Side - About Text (2 columns) */}
