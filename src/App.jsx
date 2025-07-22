@@ -1,9 +1,9 @@
 import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router";
 import "./App.css";
 import Hero from "./Components/Hero/Hero";
 import About from "./Components/About/About";
 import Skills from "./Components/Skills/Skills";
-import Footer from "./Components/Footer/Footer";
 import Contact from "./Components/Contact/Contact";
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -17,7 +17,7 @@ function App() {
       <Skills />
       <Projects />
       <Contact />
-      <Footer />
+     
       
       {/* Toast Container for notifications */}
       <ToastContainer

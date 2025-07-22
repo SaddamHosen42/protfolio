@@ -1,6 +1,7 @@
-import React, { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion"; //eslint-disable-line
+import React, { useState, useEffect } from "react";
+import { motion } from "framer-motion"; //eslint-disable-line
 import { FiExternalLink, FiCode, FiEye } from "react-icons/fi";
+import { Link, useNavigate } from "react-router";
 import {
   SiReact,
   SiFirebase,
@@ -11,12 +12,48 @@ import {
   SiExpress,
 } from "react-icons/si";
 import { FiGithub } from "react-icons/fi";
-import nivashImage from "../../assets/Nivash.png";
-import foodbridgeImage from "../../assets/FoodBridge.png";
-import plantpalImage from "../../assets/PlantPal.png";
-import ProjectDetails from "./ProjectDetails";
+
 const Projects = () => {
-  const [selectedProject, setSelectedProject] = useState(null);
+  const navigate = useNavigate();
+  const [projects, setProjects] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    // Icon mapping for technology icons
+    const iconMap = {
+      SiReact,
+      SiFirebase,
+      SiTailwindcss,
+      SiJavascript,
+      SiMongodb,
+      SiNodedotjs,
+      SiExpress,
+    };
+
+    const fetchProjects = async () => {
+      try {
+        const response = await fetch('/projects.json');
+        const data = await response.json();
+        
+        // Map the JSON data to include actual icon components
+        const processedProjects = data.map(project => ({
+          ...project,
+          technologies: project.technologies.map(tech => ({
+            ...tech,
+            icon: iconMap[tech.icon] || SiReact // fallback icon
+          }))
+        }));
+        
+        setProjects(processedProjects);
+        setLoading(false);
+      } catch (error) {
+        console.error('Error fetching projects:', error);
+        setLoading(false);
+      }
+    };
+
+    fetchProjects();
+  }, []);
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -42,92 +79,21 @@ const Projects = () => {
     },
   };
 
-  const projects = [
-    {
-      id: 1,
-      title: "Nivash",
-      description:
-        "A comprehensive real estate platform where users can browse, search, and find their dream properties. Features include property listings, detailed views, user authentication, and modern UI/UX design.",
-      image: nivashImage, 
-      liveUrl: "https://nivash-e352f.web.app/",
-      githubUrl: "https://github.com/SaddamHosen42/Nivash-Client", // Demo link - customize this
-      technologies: [
-        { name: "React", icon: SiReact, color: "#61DAFB" },
-        { name: "Node.js", icon: SiNodedotjs, color: "#339933" },
-        { name: "Express.js", icon: SiExpress, color: "#FFFFFF" },
-        { name: "MongoDB", icon: SiMongodb, color: "#47A248" },
-        { name: "Firebase", icon: SiFirebase, color: "#FFCA28" },
-        { name: "Tailwind CSS", icon: SiTailwindcss, color: "#06B6D4" },
-        { name: "JavaScript", icon: SiJavascript, color: "#F7DF1E" },
-      ],
-      features: [
-        "Property search and filtering",
-        "User authentication",
-        "Responsive design",
-        "Real-time database",
-      ],
-      category: "Full-Stack Web Application",
-      status: "Live",
-    },
-    {
-      id: 2,
-      title: "FoodBridge",
-      description:
-        "A food sharing platform that connects food donors with people in need. Users can donate surplus food, browse available donations, and help reduce food waste while supporting the community.",
-      image: foodbridgeImage,
-      liveUrl: "https://foodbridge-1.web.app/",
-      githubUrl: "https://github.com/SaddamHosen42/Food-sharing-web-client", // Demo link - customize this
-      technologies: [
-        { name: "React", icon: SiReact, color: "#61DAFB" },
-        { name: "Node.js", icon: SiNodedotjs, color: "#339933" },
-        { name: "Express.js", icon: SiExpress, color: "#FFFFFF" },
-        { name: "MongoDB", icon: SiMongodb, color: "#47A248" },
-        { name: "Firebase", icon: SiFirebase, color: "#FFCA28" },
-        { name: "Tailwind CSS", icon: SiTailwindcss, color: "#06B6D4" },
-        { name: "JavaScript", icon: SiJavascript, color: "#F7DF1E" },
-      ],
-      features: [
-        "Food donation system",
-        "Community connection",
-        "Food Name based search",
-        "Manage Food Donations ",
-        "Add Food Donation",
-        "User authentication",
-        "Responsive design",
-      ],
-      category: "Social Impact Application",
-      status: "Live",
-    },
-    {
-      id: 3,
-      title: "PlantPal",
-      description:
-        "A comprehensive plant care and gardening platform that helps users manage their plants, track care schedules, and learn about plant cultivation. Features include plant identification, care reminders, and a community for plant enthusiasts.",
-      image: plantpalImage,
-      liveUrl: "https://plantpal-425bc.web.app/",
-      githubUrl: "https://github.com/SaddamHosen42/PlantPal-Client",
-      technologies: [
-        { name: "React", icon: SiReact, color: "#61DAFB" },
-        { name: "Node.js", icon: SiNodedotjs, color: "#339933" },
-        { name: "Express.js", icon: SiExpress, color: "#FFFFFF" },
-        { name: "MongoDB", icon: SiMongodb, color: "#47A248" },
-        { name: "Firebase", icon: SiFirebase, color: "#FFCA28" },
-        { name: "Tailwind CSS", icon: SiTailwindcss, color: "#06B6D4" },
-        { name: "JavaScript", icon: SiJavascript, color: "#F7DF1E" },
-      ],
-      features: [
-        "Plant identification system",
-        "Care schedule tracking",
-        "Plant care reminders",
-        "Community features",
-        "Plant database",
-        "User authentication",
-        "Responsive design",
-      ],
-      category: "Lifestyle Application",
-      status: "Live",
-    },
-  ];
+  // Loading state
+  if (loading) {
+    return (
+      <section
+        id="projects"
+        className="min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-900 py-20 relative overflow-hidden flex items-center justify-center"
+        data-theme="dark"
+      >
+        <div className="text-center">
+          <div className="w-16 h-16 border-4 border-blue-500 border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
+          <p className="text-gray-400 text-lg">Loading Projects...</p>
+        </div>
+      </section>
+    );
+  }
 
   return (
     <section
@@ -202,13 +168,16 @@ const Projects = () => {
                     {/* Action Buttons */}
                     <div className="flex gap-3 pt-4 mt-auto">
                       <motion.button
-                        onClick={() => setSelectedProject(project)}
+                        onClick={() => navigate(`/project/${project.id}`)}
                         whileHover={{ scale: 1.05, y: -2 }}
                         whileTap={{ scale: 0.95 }}
                         className="flex-1 flex items-center justify-center gap-2 px-4 py-3 bg-gradient-to-r from-blue-600 via-purple-600 to-cyan-600 hover:from-blue-700 hover:via-purple-700 hover:to-cyan-700 text-white text-sm font-semibold rounded-xl transition-all duration-300 shadow-lg hover:shadow-blue-500/25"
                       >
                         <FiEye size={16} />
-                        View Details
+
+                       <Link to={`/project/${project.id}`}>
+                         View Details
+                       </Link>
                       </motion.button>
                       <motion.a
                         href={project.liveUrl}
@@ -230,14 +199,6 @@ const Projects = () => {
               </motion.div>
             ))}
           </div>
-
-          {/* Project Details Modal */}
-          <AnimatePresence>
-            <ProjectDetails 
-              project={selectedProject} 
-              onClose={() => setSelectedProject(null)} 
-            />
-          </AnimatePresence>
 
           {/* Call to Action */}
           <motion.div variants={itemVariants} className="text-center mt-20">
