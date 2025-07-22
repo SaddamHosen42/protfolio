@@ -5,6 +5,8 @@ const Navbar = () => {
   const smoothScrollTo = (elementId) => {
     const element = document.getElementById(elementId);
     if (element) {
+      // Update the URL hash
+      window.history.pushState(null, null, `#${elementId}`);
       element.scrollIntoView({
         behavior: 'smooth',
         block: 'start',
@@ -24,7 +26,11 @@ const Navbar = () => {
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8 }}
           className="text-2xl font-bold cursor-pointer"
-          onClick={(e) => handleNavClick(e, 'home')}
+          onClick={(e) => {
+            e.preventDefault();
+            window.history.pushState(null, null, '/');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+          }}
         >
           <span className="gradient-text">Portfolio.</span>
         </motion.div>
