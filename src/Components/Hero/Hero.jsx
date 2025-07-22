@@ -12,20 +12,24 @@ const Hero = () => {
     visible: {
       opacity: 1,
       transition: {
-        delayChildren: 0.3,
-        staggerChildren: 0.2,
+        delayChildren: 0.5,
+        staggerChildren: 0.3,
+        duration: 0.8,
       },
     },
   };
 
   const itemVariants = {
-    hidden: { y: 20, opacity: 0 },
+    hidden: { y: 50, opacity: 0, scale: 0.9 },
     visible: {
       y: 0,
       opacity: 1,
+      scale: 1,
       transition: {
-        duration: 0.8,
-        ease: "easeOut",
+        type: "spring",
+        stiffness: 100,
+        damping: 12,
+        duration: 1.2,
       },
     },
   };
@@ -34,7 +38,7 @@ const Hero = () => {
     animate: {
       rotate: 360,
       transition: {
-        duration: 25,
+        duration: 20,
         repeat: Infinity,
         ease: "linear",
       },
@@ -45,7 +49,7 @@ const Hero = () => {
     animate: {
       rotate: -360,
       transition: {
-        duration: 30,
+        duration: 25,
         repeat: Infinity,
         ease: "linear",
       },
@@ -80,7 +84,11 @@ const Hero = () => {
             className="space-y-8"
           >
             {/* Greeting */}
-            <motion.div variants={itemVariants}>
+            <motion.div 
+              variants={itemVariants}
+              whileInView={{ scale: [1, 1.05, 1] }}
+              transition={{ duration: 2, repeat: Infinity, repeatType: "reverse" }}
+            >
               <span className="text-gray-300 text-lg md:text-xl font-medium">
                 Hello, I'm
               </span>
@@ -89,13 +97,19 @@ const Hero = () => {
             {/* Name */}
             <motion.h1
               variants={itemVariants}
+              whileHover={{ scale: 1.02, rotateY: 5 }}
               className="text-5xl md:text-7xl lg:text-8xl font-bold leading-tight"
             >
               <span className="gradient-text">Saddam Hosen</span>
             </motion.h1>
 
             {/* Title/Role */}
-            <motion.div variants={itemVariants} className="space-y-3">
+            <motion.div 
+              variants={itemVariants} 
+              className="space-y-3"
+              whileInView={{ x: [0, 10, 0] }}
+              transition={{ duration: 3, repeat: Infinity, repeatType: "reverse" }}
+            >
               <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold text-white">
                 Full-Stack MERN Developer
               </h2>
@@ -110,15 +124,32 @@ const Hero = () => {
               className="flex flex-wrap gap-4 pt-6"
             >
               <motion.button
-                whileHover={{ scale: 1.05, y: -2 }}
+                whileHover={{ 
+                  scale: 1.08, 
+                  y: -3,
+                  boxShadow: "0 10px 25px rgba(139, 92, 246, 0.4)"
+                }}
                 whileTap={{ scale: 0.95 }}
+                animate={{ 
+                  boxShadow: [
+                    "0 0 20px rgba(139, 92, 246, 0.3)",
+                    "0 0 30px rgba(139, 92, 246, 0.5)",
+                    "0 0 20px rgba(139, 92, 246, 0.3)"
+                  ]
+                }}
+                transition={{ duration: 2, repeat: Infinity }}
                 className="flex items-center gap-2 px-8 py-3 bg-gradient-to-r from-purple-600 to-blue-600 text-white font-semibold rounded-lg shadow-lg hover:shadow-purple-500/25 transition-all duration-300"
               >
                 <CiViewList size={25}/>
                 View My Work
               </motion.button>
               <motion.button
-                whileHover={{ scale: 1.05, y: -2 }}
+                whileHover={{ 
+                  scale: 1.08, 
+                  y: -3,
+                  borderColor: "#a855f7",
+                  backgroundColor: "rgba(168, 85, 247, 0.1)"
+                }}
                 whileTap={{ scale: 0.95 }}
                 className="flex items-center gap-2 px-8 py-3 border-2 border-purple-500 text-purple-400 font-semibold rounded-lg hover:bg-purple-500/10 transition-all duration-300"
               >
@@ -137,8 +168,13 @@ const Hero = () => {
                 href="https://github.com/SaddamHosen42"
                 target="_blank"
                 rel="noopener noreferrer"
-                whileHover={{ scale: 1.15, y: -3 }}
-                whileTap={{ scale: 0.95 }}
+                whileHover={{ 
+                  scale: 1.2, 
+                  y: -5,
+                  rotate: [0, -10, 10, 0],
+                  transition: { duration: 0.3 }
+                }}
+                whileTap={{ scale: 0.9 }}
                 className="p-3 bg-gray-800/50 backdrop-blur-sm text-gray-400 hover:text-white hover:bg-purple-600/20 border border-gray-700 hover:border-purple-500 rounded-lg transition-all duration-300 shadow-lg hover:shadow-purple-500/20"
                 aria-label="GitHub Profile"
               >
@@ -148,8 +184,13 @@ const Hero = () => {
                 href="https://linkedin.com/in/saddam-hosen"
                 target="_blank"
                 rel="noopener noreferrer"
-                whileHover={{ scale: 1.15, y: -3 }}
-                whileTap={{ scale: 0.95 }}
+                whileHover={{ 
+                  scale: 1.2, 
+                  y: -5,
+                  rotate: [0, 10, -10, 0],
+                  transition: { duration: 0.3 }
+                }}
+                whileTap={{ scale: 0.9 }}
                 className="p-3 bg-gray-800/50 backdrop-blur-sm text-gray-400 hover:text-white hover:bg-blue-600/20 border border-gray-700 hover:border-blue-500 rounded-lg transition-all duration-300 shadow-lg hover:shadow-blue-500/20"
                 aria-label="LinkedIn Profile"
               >
@@ -159,8 +200,13 @@ const Hero = () => {
                 href="https://www.facebook.com/saddamhosen4"
                 target="_blank"
                 rel="noopener noreferrer"
-                whileHover={{ scale: 1.15, y: -3 }}
-                whileTap={{ scale: 0.95 }}
+                whileHover={{ 
+                  scale: 1.2, 
+                  y: -5,
+                  rotate: [0, -15, 15, 0],
+                  transition: { duration: 0.4 }
+                }}
+                whileTap={{ scale: 0.9 }}
                 className="p-3 bg-gray-800/50 backdrop-blur-sm text-gray-400 hover:text-white hover:bg-sky-600/20 border border-gray-700 hover:border-sky-500 rounded-lg transition-all duration-300 shadow-lg hover:shadow-sky-500/20"
                 aria-label="Twitter Profile"
               >
@@ -168,8 +214,13 @@ const Hero = () => {
               </motion.a>
               <motion.a
                 href="mailto:saddam.hosen42@gmail.com"
-                whileHover={{ scale: 1.15, y: -3 }}
-                whileTap={{ scale: 0.95 }}
+                whileHover={{ 
+                  scale: 1.2, 
+                  y: -5,
+                  rotate: [0, 12, -12, 0],
+                  transition: { duration: 0.35 }
+                }}
+                whileTap={{ scale: 0.9 }}
                 className="p-3 bg-gray-800/50 backdrop-blur-sm text-gray-400 hover:text-white hover:bg-green-600/20 border border-gray-700 hover:border-green-500 rounded-lg transition-all duration-300 shadow-lg hover:shadow-green-500/20"
                 aria-label="Email Contact"
               >
@@ -180,9 +231,15 @@ const Hero = () => {
 
           {/* Right Side - Animated Profile Image */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 1, delay: 0.5 }}
+            initial={{ opacity: 0, scale: 0.5, rotateY: 180 }}
+            animate={{ opacity: 1, scale: 1, rotateY: 0 }}
+            transition={{ 
+              duration: 1.5, 
+              delay: 0.8,
+              type: "spring",
+              stiffness: 60,
+              damping: 15
+            }}
             className="flex justify-center lg:justify-end relative"
           >
             <div className="relative">
@@ -274,8 +331,19 @@ const Hero = () => {
 
               {/* Profile Image Container */}
               <motion.div
-                whileHover={{ scale: 1.08, rotate: 5 }}
-                transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                whileHover={{ 
+                  scale: 1.1, 
+                  rotate: [0, 5, -5, 0],
+                  transition: { duration: 0.6 }
+                }}
+                animate={{
+                  y: [0, -10, 0],
+                  transition: {
+                    duration: 4,
+                    repeat: Infinity,
+                    ease: "easeInOut"
+                  }
+                }}
                 className="relative z-10 w-64 h-64 md:w-76 md:h-76 rounded-full overflow-hidden mx-auto"
                 style={{
                   background: 'linear-gradient(135deg, #8b5cf6, #06b6d4, #3b82f6)',
