@@ -59,7 +59,7 @@ const Hero = () => {
   return (
     <section
       id="home"
-      className="min-h-screen flex items-center justify-center relative overflow-hidden bg-black"
+      className="min-h-screen flex items-center justify-center relative overflow-hidden bg-black pb-10"
       data-theme="dark"
     >
       {/* Grid Background */}

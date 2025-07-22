@@ -56,7 +56,7 @@ const About = () => {
   return (
     <section
       id="about"
-      className="min-h-screen bg-black py-30 relative overflow-hidden"
+      className="min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-900 py-30 relative overflow-hidden"
       data-theme="dark"
     >
       {/* Background Pattern */}
