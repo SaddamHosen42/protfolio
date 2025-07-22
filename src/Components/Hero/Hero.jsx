@@ -1,10 +1,10 @@
-import React from 'react';
-import { motion } from 'framer-motion';//eslint-disable-line
-import { FiGithub, FiLinkedin, FiMail} from 'react-icons/fi';
-import { FaDownload, FaFacebook } from 'react-icons/fa';
-import Navbar from '../Navbar/Navbar';
+import React from "react";
+import { motion } from "framer-motion"; //eslint-disable-line
+import { FiGithub, FiLinkedin, FiMail } from "react-icons/fi";
+import { FaDownload, FaFacebook } from "react-icons/fa";
+import Navbar from "../Navbar/Navbar";
 import image from "../../assets/my-img-removebg-copy.png";
-import { CiViewList } from 'react-icons/ci';
+import { CiViewList } from "react-icons/ci";
 
 const Hero = () => {
   const containerVariants = {
@@ -57,17 +57,17 @@ const Hero = () => {
   };
 
   return (
-    <section 
-      id="home" 
+    <section
+      id="home"
       className="min-h-screen flex items-center justify-center relative overflow-hidden bg-black"
       data-theme="dark"
     >
       {/* Grid Background */}
-      <div 
+      <div
         className="absolute inset-0 opacity-10"
         style={{
           backgroundImage: `radial-gradient(circle at 1px 1px, #8b5cf6 1px, transparent 0)`,
-          backgroundSize: '50px 50px',
+          backgroundSize: "50px 50px",
         }}
       />
 
@@ -84,10 +84,14 @@ const Hero = () => {
             className="space-y-8"
           >
             {/* Greeting */}
-            <motion.div 
+            <motion.div
               variants={itemVariants}
               whileInView={{ scale: [1, 1.05, 1] }}
-              transition={{ duration: 2, repeat: Infinity, repeatType: "reverse" }}
+              transition={{
+                duration: 2,
+                repeat: Infinity,
+                repeatType: "reverse",
+              }}
             >
               <span className="text-gray-300 text-lg md:text-xl font-medium">
                 Hello, I'm
@@ -104,17 +108,26 @@ const Hero = () => {
             </motion.h1>
 
             {/* Title/Role */}
-            <motion.div 
-              variants={itemVariants} 
+            <motion.div
+              variants={itemVariants}
               className="space-y-3"
               whileInView={{ x: [0, 10, 0] }}
-              transition={{ duration: 3, repeat: Infinity, repeatType: "reverse" }}
+              transition={{
+                duration: 3,
+                repeat: Infinity,
+                repeatType: "reverse",
+              }}
             >
               <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold text-white">
                 Full-Stack MERN Developer
               </h2>
               <p className="text-lg md:text-xl text-gray-300 leading-relaxed max-w-2xl">
-                Passionate about crafting <span className="gradient-text font-semibold">scalable web applications</span> and turning innovative ideas into digital reality. Specialized in modern JavaScript technologies and user-centered design.
+                Passionate about crafting{" "}
+                <span className="gradient-text font-semibold">
+                  scalable web applications
+                </span>{" "}
+                and turning innovative ideas into digital reality. Specialized
+                in modern JavaScript technologies and user-centered design.
               </p>
             </motion.div>
 
@@ -124,55 +137,51 @@ const Hero = () => {
               className="flex flex-wrap gap-4 pt-6"
             >
               <motion.button
-                whileHover={{ 
-                  scale: 1.08, 
+                whileHover={{
+                  scale: 1.08,
                   y: -3,
-                  boxShadow: "0 10px 25px rgba(139, 92, 246, 0.4)"
+                  boxShadow: "0 10px 25px rgba(139, 92, 246, 0.4)",
                 }}
                 whileTap={{ scale: 0.95 }}
-                animate={{ 
+                animate={{
                   boxShadow: [
                     "0 0 20px rgba(139, 92, 246, 0.3)",
                     "0 0 30px rgba(139, 92, 246, 0.5)",
-                    "0 0 20px rgba(139, 92, 246, 0.3)"
-                  ]
+                    "0 0 20px rgba(139, 92, 246, 0.3)",
+                  ],
                 }}
                 transition={{ duration: 2, repeat: Infinity }}
-                className="flex items-center gap-2 px-8 py-3 bg-gradient-to-r from-purple-600 to-blue-600 text-white font-semibold rounded-lg shadow-lg hover:shadow-purple-500/25 transition-all duration-300"
+                className=" cursor-pointer flex items-center gap-2 px-8 py-3 bg-gradient-to-r from-purple-600 to-blue-600 text-white font-semibold rounded-lg shadow-lg hover:shadow-purple-500/25 transition-all duration-300"
               >
-                <CiViewList size={25}/>
+                <CiViewList size={25} />
                 View My Work
               </motion.button>
               <motion.button
-                whileHover={{ 
-                  scale: 1.08, 
+                whileHover={{
+                  scale: 1.08,
                   y: -3,
                   borderColor: "#a855f7",
-                  backgroundColor: "rgba(168, 85, 247, 0.1)"
+                  backgroundColor: "rgba(168, 85, 247, 0.1)",
                 }}
                 whileTap={{ scale: 0.95 }}
-                className="flex items-center gap-2 px-8 py-3 border-2 border-purple-500 text-purple-400 font-semibold rounded-lg hover:bg-purple-500/10 transition-all duration-300"
+                className="cursor-pointer flex items-center gap-2 px-8 py-3 border-2 border-purple-500 text-purple-400 font-semibold rounded-lg hover:bg-purple-500/10 transition-all duration-300"
               >
-                   <FaDownload />
+                <FaDownload />
                 Download CV
-           
               </motion.button>
             </motion.div>
 
             {/* Professional Social Links */}
-            <motion.div
-              variants={itemVariants}
-              className="flex space-x-5 pt-4"
-            >
+            <motion.div variants={itemVariants} className="flex space-x-5 pt-4">
               <motion.a
                 href="https://github.com/SaddamHosen42"
                 target="_blank"
                 rel="noopener noreferrer"
-                whileHover={{ 
-                  scale: 1.2, 
+                whileHover={{
+                  scale: 1.2,
                   y: -5,
                   rotate: [0, -10, 10, 0],
-                  transition: { duration: 0.3 }
+                  transition: { duration: 0.3 },
                 }}
                 whileTap={{ scale: 0.9 }}
                 className="p-3 bg-gray-800/50 backdrop-blur-sm text-gray-400 hover:text-white hover:bg-purple-600/20 border border-gray-700 hover:border-purple-500 rounded-lg transition-all duration-300 shadow-lg hover:shadow-purple-500/20"
@@ -184,11 +193,11 @@ const Hero = () => {
                 href="https://linkedin.com/in/saddam-hosen"
                 target="_blank"
                 rel="noopener noreferrer"
-                whileHover={{ 
-                  scale: 1.2, 
+                whileHover={{
+                  scale: 1.2,
                   y: -5,
                   rotate: [0, 10, -10, 0],
-                  transition: { duration: 0.3 }
+                  transition: { duration: 0.3 },
                 }}
                 whileTap={{ scale: 0.9 }}
                 className="p-3 bg-gray-800/50 backdrop-blur-sm text-gray-400 hover:text-white hover:bg-blue-600/20 border border-gray-700 hover:border-blue-500 rounded-lg transition-all duration-300 shadow-lg hover:shadow-blue-500/20"
@@ -200,11 +209,11 @@ const Hero = () => {
                 href="https://www.facebook.com/saddamhosen4"
                 target="_blank"
                 rel="noopener noreferrer"
-                whileHover={{ 
-                  scale: 1.2, 
+                whileHover={{
+                  scale: 1.2,
                   y: -5,
                   rotate: [0, -15, 15, 0],
-                  transition: { duration: 0.4 }
+                  transition: { duration: 0.4 },
                 }}
                 whileTap={{ scale: 0.9 }}
                 className="p-3 bg-gray-800/50 backdrop-blur-sm text-gray-400 hover:text-white hover:bg-sky-600/20 border border-gray-700 hover:border-sky-500 rounded-lg transition-all duration-300 shadow-lg hover:shadow-sky-500/20"
@@ -214,11 +223,11 @@ const Hero = () => {
               </motion.a>
               <motion.a
                 href="mailto:saddam.hosen42@gmail.com"
-                whileHover={{ 
-                  scale: 1.2, 
+                whileHover={{
+                  scale: 1.2,
                   y: -5,
                   rotate: [0, 12, -12, 0],
-                  transition: { duration: 0.35 }
+                  transition: { duration: 0.35 },
                 }}
                 whileTap={{ scale: 0.9 }}
                 className="p-3 bg-gray-800/50 backdrop-blur-sm text-gray-400 hover:text-white hover:bg-green-600/20 border border-gray-700 hover:border-green-500 rounded-lg transition-all duration-300 shadow-lg hover:shadow-green-500/20"
@@ -233,12 +242,12 @@ const Hero = () => {
           <motion.div
             initial={{ opacity: 0, scale: 0.5, rotateY: 180 }}
             animate={{ opacity: 1, scale: 1, rotateY: 0 }}
-            transition={{ 
-              duration: 1.5, 
+            transition={{
+              duration: 1.5,
               delay: 0.8,
               type: "spring",
               stiffness: 60,
-              damping: 15
+              damping: 15,
             }}
             className="flex justify-center lg:justify-end relative"
           >
@@ -279,21 +288,39 @@ const Hero = () => {
                     opacity="0.5"
                     strokeLinecap="round"
                   />
-                  
+
                   {/* Gradient definitions */}
                   <defs>
-                    <linearGradient id="gradient1" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <linearGradient
+                      id="gradient1"
+                      x1="0%"
+                      y1="0%"
+                      x2="100%"
+                      y2="100%"
+                    >
                       <stop offset="0%" stopColor="#8b5cf6" />
                       <stop offset="30%" stopColor="#a855f7" />
                       <stop offset="70%" stopColor="#c084fc" />
                       <stop offset="100%" stopColor="#e879f9" />
                     </linearGradient>
-                    <linearGradient id="gradient2" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <linearGradient
+                      id="gradient2"
+                      x1="0%"
+                      y1="0%"
+                      x2="100%"
+                      y2="100%"
+                    >
                       <stop offset="0%" stopColor="#06b6d4" />
                       <stop offset="50%" stopColor="#3b82f6" />
                       <stop offset="100%" stopColor="#6366f1" />
                     </linearGradient>
-                    <linearGradient id="gradient3" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <linearGradient
+                      id="gradient3"
+                      x1="0%"
+                      y1="0%"
+                      x2="100%"
+                      y2="100%"
+                    >
                       <stop offset="0%" stopColor="#3b82f6" />
                       <stop offset="50%" stopColor="#6366f1" />
                       <stop offset="100%" stopColor="#8b5cf6" />
@@ -331,37 +358,39 @@ const Hero = () => {
 
               {/* Profile Image Container */}
               <motion.div
-                whileHover={{ 
-                  scale: 1.1, 
+                whileHover={{
+                  scale: 1.1,
                   rotate: [0, 5, -5, 0],
-                  transition: { duration: 0.6 }
+                  transition: { duration: 0.6 },
                 }}
                 animate={{
                   y: [0, -10, 0],
                   transition: {
                     duration: 4,
                     repeat: Infinity,
-                    ease: "easeInOut"
-                  }
+                    ease: "easeInOut",
+                  },
                 }}
                 className="relative z-10 w-64 h-64 md:w-76 md:h-76 rounded-full overflow-hidden mx-auto"
                 style={{
-                  background: 'linear-gradient(135deg, #8b5cf6, #06b6d4, #3b82f6)',
-                  padding: '4px',
-                  boxShadow: '0 0 40px rgba(139, 92, 246, 0.4), 0 0 80px rgba(139, 92, 246, 0.2)',
+                  background:
+                    "linear-gradient(135deg, #8b5cf6, #06b6d4, #3b82f6)",
+                  padding: "4px",
+                  boxShadow:
+                    "0 0 40px rgba(139, 92, 246, 0.4), 0 0 80px rgba(139, 92, 246, 0.2)",
                 }}
               >
                 <div className="w-full h-full rounded-full bg-black flex items-center justify-center overflow-hidden relative">
                   {/* Your actual profile image */}
-                  <img 
+                  <img
                     src={image}
                     alt="Saddam Hosen - Profile"
                     className="w-full h-full rounded-full object-cover hover:scale-110 transition-transform duration-500"
                   />
-                  
+
                   {/* Enhanced glow overlay */}
                   <div className="absolute inset-0 bg-gradient-to-t from-purple-600/30 via-transparent to-cyan-400/20 rounded-full"></div>
-                  
+
                   {/* Shimmer effect */}
                   <div className="absolute inset-0 rounded-full bg-gradient-to-r from-transparent via-white/10 to-transparent animate-pulse"></div>
                 </div>
@@ -379,7 +408,7 @@ const Hero = () => {
                   ease: "easeInOut",
                 }}
                 className="absolute top-16 -right-10 w-5 h-5 bg-gradient-to-r from-purple-400 to-pink-400 rounded-full opacity-70 shadow-lg"
-                style={{ filter: 'blur(0.5px)' }}
+                style={{ filter: "blur(0.5px)" }}
               />
               <motion.div
                 animate={{
@@ -393,7 +422,7 @@ const Hero = () => {
                   delay: 1.5,
                 }}
                 className="absolute bottom-16 -left-10 w-4 h-4 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-full opacity-60 shadow-lg"
-                style={{ filter: 'blur(0.5px)' }}
+                style={{ filter: "blur(0.5px)" }}
               />
               <motion.div
                 animate={{
@@ -407,7 +436,7 @@ const Hero = () => {
                   delay: 3,
                 }}
                 className="absolute top-1/2 -right-14 w-3 h-3 bg-gradient-to-r from-indigo-400 to-purple-500 rounded-full opacity-50 shadow-lg"
-                style={{ filter: 'blur(0.5px)' }}
+                style={{ filter: "blur(0.5px)" }}
               />
               <motion.div
                 animate={{
@@ -421,7 +450,7 @@ const Hero = () => {
                   delay: 2,
                 }}
                 className="absolute top-8 -left-6 w-2.5 h-2.5 bg-gradient-to-r from-pink-400 to-rose-500 rounded-full opacity-60 shadow-lg"
-                style={{ filter: 'blur(0.5px)' }}
+                style={{ filter: "blur(0.5px)" }}
               />
             </div>
           </motion.div>
