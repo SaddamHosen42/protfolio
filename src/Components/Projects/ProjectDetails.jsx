@@ -260,7 +260,18 @@ const ProjectDetails = () => {
                     className="flex items-center gap-3 w-full px-6 py-4 border-2 border-gray-600 text-gray-300 hover:border-blue-500 hover:bg-gray-700/50 font-semibold rounded-xl transition-all duration-300 shadow"
                   >
                     <FiGithub size={20} />
-                    View Source Code
+                    View Client Code
+                  </motion.a>
+                  <motion.a
+                    href={project.serverUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.98 }}
+                    className="flex items-center gap-3 w-full px-6 py-4 border-2 border-gray-600 text-gray-300 hover:border-blue-500 hover:bg-gray-700/50 font-semibold rounded-xl transition-all duration-300 shadow"
+                  >
+                    <FiGithub size={20} />
+                    View Server Code
                   </motion.a>
                 </div>
               </motion.div>

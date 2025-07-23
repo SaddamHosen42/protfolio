@@ -6,6 +6,7 @@
     "image": "https://i.ibb.co/bRWPc4s7/Nivash.png",
     "liveUrl": "https://nivash-e352f.web.app/",
     "githubUrl": "https://github.com/SaddamHosen42/Nivash-Client",
+    "serverUrl": "https://github.com/SaddamHosen42/Nivash-Server",
     "technologies": [
       { "name": "React", "icon": "SiReact", "color": "#61DAFB" },
       { "name": "Node.js", "icon": "SiNodedotjs", "color": "#339933" },
@@ -31,6 +32,7 @@
     "image": "https://i.ibb.co/FbmDyP9t/Food-Bridge.png",
     "liveUrl": "https://foodbridge-1.web.app/",
     "githubUrl": "https://github.com/SaddamHosen42/Food-sharing-web-client",
+    "serverUrl": "https://github.com/SaddamHosen42/Food-Sharing-Web-Server",
     "technologies": [
       { "name": "React", "icon": "SiReact", "color": "#61DAFB" },
       { "name": "Node.js", "icon": "SiNodedotjs", "color": "#339933" },
@@ -59,6 +61,7 @@
     "image": "https://i.ibb.co/F4nMcmbM/PlantPal.png",
     "liveUrl": "https://plantpal-425bc.web.app/",
     "githubUrl": "https://github.com/SaddamHosen42/PlantPal-Client",
+    "serverUrl": "https://github.com/SaddamHosen42/PlantPal-Server",
     "technologies": [
       { "name": "React", "icon": "SiReact", "color": "#61DAFB" },
       { "name": "Node.js", "icon": "SiNodedotjs", "color": "#339933" },

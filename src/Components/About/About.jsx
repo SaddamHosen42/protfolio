@@ -1,8 +1,9 @@
 import React from "react";
 import { motion } from "framer-motion"; //eslint-disable-line
 import { FiGithub, FiLinkedin } from "react-icons/fi";
-import  profileAnimation from "../../Lottie-animation-file/lottie-animation.json"
+import profileAnimation from "../../Lottie-animation-file/lottie-animation.json";
 import Lottie from "lottie-react";
+import { MdExplore } from "react-icons/md";
 
 const About = () => {
   const containerVariants = {
@@ -77,10 +78,7 @@ const About = () => {
           className="space-y-16"
         >
           {/* Section Header */}
-          <motion.div
-            variants={itemVariants}
-            className="text-center"
-          >
+          <motion.div variants={itemVariants} className="text-center">
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4">
               <span className="gradient-text">👋 About Me</span>
             </h2>
@@ -107,12 +105,12 @@ const About = () => {
               className="flex justify-center lg:justify-center"
             >
               <div className="w-72 h-72 md:w-80 md:h-80 lg:w-96 lg:h-96 flex items-center justify-center">
-                <Lottie 
-                  animationData={profileAnimation} 
-                  loop={true} 
+                <Lottie
+                  animationData={profileAnimation}
+                  loop={true}
                   className="w-full h-full max-w-sm"
                   style={{
-                    filter: 'drop-shadow(0 0 20px rgba(139, 92, 246, 0.3))'
+                    filter: "drop-shadow(0 0 20px rgba(139, 92, 246, 0.3))",
                   }}
                 />
               </div>
@@ -164,9 +162,12 @@ const About = () => {
                     transition={{ duration: 0.6, delay: 0.5 }}
                     whileHover={{ scale: 1.02 }}
                   >
-                    <p className="text-white font-medium text-xl">
-                      💡 Currently exploring full-stack development and aiming
-                      to become a skilled backend engineer, InshaAllah.
+                    <p className="text-white font-medium text-xl flex gap-2 items-center">
+                      <MdExplore size={30} />{" "}
+                      <span>
+                        Currently exploring full-stack development and aiming to
+                        become a skilled backend engineer, InshaAllah.
+                      </span>
                     </p>
                   </motion.div>
                 </div>

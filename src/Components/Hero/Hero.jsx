@@ -136,7 +136,8 @@ const Hero = () => {
               variants={itemVariants}
               className="flex flex-wrap gap-4 pt-6"
             >
-              <motion.button
+              <motion.a
+                href="#projects" 
                 whileHover={{
                   scale: 1.08,
                   y: -3,
@@ -155,7 +156,7 @@ const Hero = () => {
               >
                 <CiViewList size={25} />
                 View My Work
-              </motion.button>
+              </motion.a>
               <motion.button
                 whileHover={{
                   scale: 1.08,
@@ -222,7 +223,7 @@ const Hero = () => {
                 <FaFacebook size={24} />
               </motion.a>
               <motion.a
-                href="mailto:saddam.hosen42@gmail.com"
+                href="#contact"
                 whileHover={{
                   scale: 1.2,
                   y: -5,

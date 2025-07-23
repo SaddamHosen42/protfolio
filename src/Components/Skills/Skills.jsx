@@ -192,7 +192,7 @@ const Skills = () => {
           >
             <div className="bg-gradient-to-r from-blue-600/20 via-purple-600/20 to-cyan-600/20 border border-blue-500/30 rounded-2xl p-10 max-w-4xl mx-auto backdrop-blur-sm">
               <h3 className="text-3xl font-bold text-white mb-6">
-                🚀 Continuously Learning & Evolving
+                 Continuously Learning & Evolving
               </h3>
               <p className="text-gray-300 text-lg mb-6 leading-relaxed">
                 Technology never stops evolving, and neither do I. I'm passionate about learning new tools, 

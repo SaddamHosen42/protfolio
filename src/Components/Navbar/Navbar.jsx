@@ -19,7 +19,7 @@ const Navbar = () => {
     smoothScrollTo(sectionId);
   };
   return (
-    <nav className="absolute top-0 left-0 right-0 z-50 p-6">
+    <nav className="fixed top-0 left-0 right-0 z-50 p-6 bg-transparent backdrop-blur-md">
       <div className="container mx-auto flex justify-between items-center">
         <motion.div
           initial={{ opacity: 0, x: -20 }}
@@ -32,7 +32,7 @@ const Navbar = () => {
             window.scrollTo({ top: 0, behavior: 'smooth' });
           }}
         >
-          <span className="gradient-text">Portfolio.</span>
+          <span className="gradient-text">Saddam</span>
         </motion.div>
         
         <motion.div
