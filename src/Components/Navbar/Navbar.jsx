@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion'; //eslint-disable-line
 
+
 const Navbar = () => {
   const smoothScrollTo = (elementId) => {
     const element = document.getElementById(elementId);
@@ -32,7 +33,9 @@ const Navbar = () => {
             window.scrollTo({ top: 0, behavior: 'smooth' });
           }}
         >
-          <span className="gradient-text">Saddam</span>
+          <span className="gradient-text">
+            Saddam
+          </span>
         </motion.div>
         
         <motion.div
@@ -76,7 +79,7 @@ const Navbar = () => {
         </motion.div>
 
         <motion.a
-          href="/resume.pdf"
+          href="https://drive.google.com/file/d/1R5wXMxxuj8uaB6ZZqneRxDuUQLXl6IF4/view?usp=drive_link"
           target="_blank"
           rel="noopener noreferrer"
           initial={{ opacity: 0, x: 20 }}

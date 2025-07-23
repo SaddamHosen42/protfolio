@@ -137,7 +137,7 @@ const Hero = () => {
               className="flex flex-wrap gap-4 pt-6"
             >
               <motion.a
-                href="#projects" 
+                href="#projects"
                 whileHover={{
                   scale: 1.08,
                   y: -3,
@@ -157,7 +157,11 @@ const Hero = () => {
                 <CiViewList size={25} />
                 View My Work
               </motion.a>
-              <motion.button
+              <motion.a
+                href="/Saddam-Resume.pdf"
+                download={true}
+                target="_blank"
+                rel="noopener noreferrer"
                 whileHover={{
                   scale: 1.08,
                   y: -3,
@@ -169,7 +173,7 @@ const Hero = () => {
               >
                 <FaDownload />
                 Download CV
-              </motion.button>
+              </motion.a>
             </motion.div>
 
             {/* Professional Social Links */}
