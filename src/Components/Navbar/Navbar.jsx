@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion'; //eslint-disable-line
+import { VscTerminal } from 'react-icons/vsc';
 
 
 const Navbar = () => {
@@ -33,7 +34,8 @@ const Navbar = () => {
             window.scrollTo({ top: 0, behavior: 'smooth' });
           }}
         >
-          <span className="gradient-text">
+          <span className="gradient-text flex items-center gap-2">
+            <VscTerminal className='text-white' />
             Saddam
           </span>
         </motion.div>
@@ -79,7 +81,7 @@ const Navbar = () => {
         </motion.div>
 
         <motion.a
-          href="https://drive.google.com/file/d/1R5wXMxxuj8uaB6ZZqneRxDuUQLXl6IF4/view?usp=drive_link"
+          href="https://drive.google.com/file/d/1EIpjyVGLSV_nfnlTtICc3kEd8JMmsSVm/view?usp=drive_link"
           target="_blank"
           rel="noopener noreferrer"
           initial={{ opacity: 0, x: 20 }}

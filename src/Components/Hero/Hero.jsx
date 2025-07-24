@@ -158,7 +158,7 @@ const Hero = () => {
                 View My Work
               </motion.a>
               <motion.a
-                href="/Saddam-Resume.pdf"
+                href="/My-resume.pdf"
                 download={true}
                 target="_blank"
                 rel="noopener noreferrer"
