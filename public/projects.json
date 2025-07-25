@@ -8,19 +8,57 @@
     "githubUrl": "https://github.com/SaddamHosen42/Nivash-Client",
     "serverUrl": "https://github.com/SaddamHosen42/Nivash-Server",
     "technologies": [
-      { "name": "React", "icon": "SiReact", "color": "#61DAFB" },
-      { "name": "Node.js", "icon": "SiNodedotjs", "color": "#339933" },
-      { "name": "Express.js", "icon": "SiExpress", "color": "#FFFFFF" },
-      { "name": "MongoDB", "icon": "SiMongodb", "color": "#47A248" },
-      { "name": "Firebase", "icon": "SiFirebase", "color": "#FFCA28" },
-      { "name": "Tailwind CSS", "icon": "SiTailwindcss", "color": "#06B6D4" },
-      { "name": "JavaScript", "icon": "SiJavascript", "color": "#F7DF1E" }
+      {
+        "name": "React",
+        "icon": "SiReact",
+        "color": "#61DAFB"
+      },
+      {
+        "name": "Node.js",
+        "icon": "SiNodedotjs",
+        "color": "#339933"
+      },
+      {
+        "name": "Express.js",
+        "icon": "SiExpress",
+        "color": "#FFFFFF"
+      },
+      {
+        "name": "MongoDB",
+        "icon": "SiMongodb",
+        "color": "#47A248"
+      },
+      {
+        "name": "Firebase",
+        "icon": "SiFirebase",
+        "color": "#FFCA28"
+      },
+      {
+        "name": "Tailwind CSS",
+        "icon": "SiTailwindcss",
+        "color": "#06B6D4"
+      },
+      {
+        "name": "JavaScript",
+        "icon": "SiJavascript",
+        "color": "#F7DF1E"
+      }
     ],
     "features": [
-      "Property search and filtering",
-      "User authentication",
-      "Responsive design",
-      "Real-time database"
+      "Role-based authentication (User, Member, Admin)",
+      "User authentication using Firebase (Email/Password based)",
+      "JWT token-based secure API communication (stored in client-side)",
+      "Apartment listing with search, filter, and pagination",
+      "Agreement request system with Accept/Reject functionality",
+      "Monthly rent payment with optional coupon support",
+      "Stripe and SSLCOMMERZ payment gateway integration",
+      "Admin dashboard with statistics and management options",
+      "Announcement management for users and members",
+      "Coupon management system (create, apply, expire)",
+      "Responsive and animated UI using Tailwind CSS and Framer Motion",
+      "Real-time status update of apartment availability",
+      "Form validation with React Hook Form",
+      "Clean, modular and scalable code structure"
     ],
     "category": "Full-Stack Web Application",
     "status": "Live"
@@ -34,22 +72,52 @@
     "githubUrl": "https://github.com/SaddamHosen42/Food-sharing-web-client",
     "serverUrl": "https://github.com/SaddamHosen42/Food-Sharing-Web-Server",
     "technologies": [
-      { "name": "React", "icon": "SiReact", "color": "#61DAFB" },
-      { "name": "Node.js", "icon": "SiNodedotjs", "color": "#339933" },
-      { "name": "Express.js", "icon": "SiExpress", "color": "#FFFFFF" },
-      { "name": "MongoDB", "icon": "SiMongodb", "color": "#47A248" },
-      { "name": "Firebase", "icon": "SiFirebase", "color": "#FFCA28" },
-      { "name": "Tailwind CSS", "icon": "SiTailwindcss", "color": "#06B6D4" },
-      { "name": "JavaScript", "icon": "SiJavascript", "color": "#F7DF1E" }
+      {
+        "name": "React",
+        "icon": "SiReact",
+        "color": "#61DAFB"
+      },
+      {
+        "name": "Node.js",
+        "icon": "SiNodedotjs",
+        "color": "#339933"
+      },
+      {
+        "name": "Express.js",
+        "icon": "SiExpress",
+        "color": "#FFFFFF"
+      },
+      {
+        "name": "MongoDB",
+        "icon": "SiMongodb",
+        "color": "#47A248"
+      },
+      {
+        "name": "Firebase",
+        "icon": "SiFirebase",
+        "color": "#FFCA28"
+      },
+      {
+        "name": "Tailwind CSS",
+        "icon": "SiTailwindcss",
+        "color": "#06B6D4"
+      },
+      {
+        "name": "JavaScript",
+        "icon": "SiJavascript",
+        "color": "#F7DF1E"
+      }
     ],
     "features": [
-      "Food donation system",
-      "Community connection",
-      "Food Name based search",
-      "Manage Food Donations",
-      "Add Food Donation",
-      "User authentication",
-      "Responsive design"
+      "Food listing with name, image, quantity, pickup location, and donor info",
+      "User authentication using Firebase (Email/Password based)",
+      "JWT token-based secure API communication (stored in client-side)",
+      "Request modal with non-editable food info and editable notes field",
+      "Food request submission with status update to 'unavailable'",
+      "MongoDB integration with native driver for database operations",
+      "Real-time food availability status update",
+      "Animated and responsive UI",
+      "Success and error toast notifications for user actions"
     ],
     "category": "Social Impact Application",
     "status": "Live"
@@ -63,13 +131,41 @@
     "githubUrl": "https://github.com/SaddamHosen42/PlantPal-Client",
     "serverUrl": "https://github.com/SaddamHosen42/PlantPal-Server",
     "technologies": [
-      { "name": "React", "icon": "SiReact", "color": "#61DAFB" },
-      { "name": "Node.js", "icon": "SiNodedotjs", "color": "#339933" },
-      { "name": "Express.js", "icon": "SiExpress", "color": "#FFFFFF" },
-      { "name": "MongoDB", "icon": "SiMongodb", "color": "#47A248" },
-      { "name": "Firebase", "icon": "SiFirebase", "color": "#FFCA28" },
-      { "name": "Tailwind CSS", "icon": "SiTailwindcss", "color": "#06B6D4" },
-      { "name": "JavaScript", "icon": "SiJavascript", "color": "#F7DF1E" }
+      {
+        "name": "React",
+        "icon": "SiReact",
+        "color": "#61DAFB"
+      },
+      {
+        "name": "Node.js",
+        "icon": "SiNodedotjs",
+        "color": "#339933"
+      },
+      {
+        "name": "Express.js",
+        "icon": "SiExpress",
+        "color": "#FFFFFF"
+      },
+      {
+        "name": "MongoDB",
+        "icon": "SiMongodb",
+        "color": "#47A248"
+      },
+      {
+        "name": "Firebase",
+        "icon": "SiFirebase",
+        "color": "#FFCA28"
+      },
+      {
+        "name": "Tailwind CSS",
+        "icon": "SiTailwindcss",
+        "color": "#06B6D4"
+      },
+      {
+        "name": "JavaScript",
+        "icon": "SiJavascript",
+        "color": "#F7DF1E"
+      }
     ],
     "features": [
       "Plant identification system",
@@ -77,7 +173,7 @@
       "Plant care reminders",
       "Community features",
       "Plant database",
-      "User authentication",
+      "User authentication using Firebase (Email/Password based)",
       "Responsive design"
     ],
     "category": "Lifestyle Application",
