@@ -138,10 +138,7 @@ const About = () => {
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6, delay: 0.3 }}
                   >
-                    A 3rd-year CSE student at HSTU and a passionate web
-                    developer. I've completed Level 1 of Programming Hero (Batch
-                    11) course and love building clean, responsive, and
-                    user-friendly web applications.
+                    I am a third-year Computer Science & Engineering student at HSTU, deeply passionate about web development. Having successfully completed Level 1 of the Programming Hero (Batch 11) course, I specialize in building clean, responsive, and user-centric web applications.
                   </motion.p>
 
                   <motion.p
@@ -149,10 +146,7 @@ const About = () => {
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6, delay: 0.4 }}
                   >
-                    I'm comfortable with React, Node.js, Express, MongoDB, and
-                    also love working with Tailwind CSS, DaisyUI, and modern
-                    tools like Firebase. Always eager to learn new things and
-                    bring ideas to life through code.
+                    My technical expertise includes React, Node.js, Express, and MongoDB, complemented by a strong proficiency in Tailwind CSS, DaisyUI, and modern tools such as Firebase. I am committed to continuous learning and thrive on transforming ideas into robust digital solutions.
                   </motion.p>
 
                   <motion.div

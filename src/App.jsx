@@ -8,12 +8,14 @@ import Contact from "./Components/Contact/Contact";
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Projects from "./Components/Projects/Projects";
+import Education from "./Components/Education/Education";
 
 function App() {
   return (
     <div>
       <Hero />
       <About />
+      <Education />
       <Skills />
       <Projects />
       <Contact />

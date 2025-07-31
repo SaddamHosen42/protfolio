@@ -55,6 +55,14 @@ const Navbar = () => {
             ABOUT
           </motion.a>
           <motion.a 
+            href="#education" 
+            onClick={(e) => handleNavClick(e, 'education')}
+            className="hover:text-purple-400 transition-colors duration-300 cursor-pointer"
+            whileHover={{ scale: 1.05 }}
+          >
+            EDUCATION
+          </motion.a>
+          <motion.a 
             href="#skills" 
             onClick={(e) => handleNavClick(e, 'skills')}
             className="hover:text-purple-400 transition-colors duration-300 cursor-pointer"
