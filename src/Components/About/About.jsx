@@ -104,11 +104,11 @@ const About = () => {
               variants={imageVariants}
               className="flex justify-center lg:justify-center"
             >
-              <div className="w-72 h-72 md:w-80 md:h-80 lg:w-96 lg:h-96 flex items-center justify-center">
+              <div className="w-80 h-80 md:w-96 md:h-96 lg:w-[450px] lg:h-[450px] xl:w-[500px] xl:h-[500px] flex items-center justify-center">
                 <Lottie
                   animationData={profileAnimation}
                   loop={true}
-                  className="w-full h-full max-w-sm"
+                  className="w-full h-full"
                   style={{
                     filter: "drop-shadow(0 0 20px rgba(139, 92, 246, 0.3))",
                   }}

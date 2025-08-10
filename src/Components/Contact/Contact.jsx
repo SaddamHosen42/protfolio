@@ -105,14 +105,14 @@ const Contact = () => {
     },
     {
       icon: FiPhone,
-      title: "Phone",
+      title: "WhatsApp",
       value: "+880 1627482575",
       color: "text-green-400"
     },
     {
       icon: FiMapPin,
       title: "Location",
-      value: "Dinajpur, Bangladesh",
+      value: "Tangail, Dhaka, Bangladesh",
       color: "text-purple-400"
     }
   ];
