@@ -75,13 +75,13 @@ const Hero = () => {
       <Navbar />
 
       <div className="container mx-auto px-6 relative z-10 w-[90%] lg:w-[80%] mt-30">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
-          {/* Left Side - Text Content */}
+        <div className="flex flex-col lg:grid lg:grid-cols-2 gap-12 items-center">
+          {/* Mobile: Profile Image First, Desktop: Text Content */}
           <motion.div
             variants={containerVariants}
             initial="hidden"
             animate="visible"
-            className="space-y-8"
+            className="space-y-8 order-2 lg:order-1"
           >
             {/* Greeting */}
             <motion.div
@@ -92,6 +92,7 @@ const Hero = () => {
                 repeat: Infinity,
                 repeatType: "reverse",
               }}
+              className="text-center lg:text-left"
             >
               <span className="text-gray-300 text-lg md:text-xl font-medium">
                 Hello, I'm
@@ -102,7 +103,7 @@ const Hero = () => {
             <motion.h1
               variants={itemVariants}
               whileHover={{ scale: 1.02, rotateY: 5 }}
-              className="text-5xl md:text-7xl lg:text-8xl font-bold leading-tight"
+              className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-bold leading-tight text-center lg:text-left"
             >
               <span className="gradient-text">Saddam Hosen</span>
             </motion.h1>
@@ -110,7 +111,7 @@ const Hero = () => {
             {/* Title/Role */}
             <motion.div
               variants={itemVariants}
-              className="space-y-3"
+              className="space-y-3 text-center lg:text-left"
               whileInView={{ x: [0, 10, 0] }}
               transition={{
                 duration: 3,
@@ -118,10 +119,10 @@ const Hero = () => {
                 repeatType: "reverse",
               }}
             >
-              <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold text-white">
+              <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold text-white">
                 Full-Stack MERN Developer
               </h2>
-              <p className="text-lg md:text-xl text-gray-300 leading-relaxed max-w-2xl">
+              <p className="text-base sm:text-lg md:text-xl text-gray-300 leading-relaxed max-w-2xl mx-auto lg:mx-0">
                 Passionate about crafting{" "}
                 <span className="gradient-text font-semibold">
                   scalable web applications
@@ -134,7 +135,7 @@ const Hero = () => {
             {/* Call to Action Buttons */}
             <motion.div
               variants={itemVariants}
-              className="flex flex-wrap gap-4 pt-6"
+              className="flex flex-col sm:flex-row justify-center lg:justify-start gap-4 pt-6"
             >
               <motion.a
                 href="#projects"
@@ -177,7 +178,7 @@ const Hero = () => {
             </motion.div>
 
             {/* Professional Social Links */}
-            <motion.div variants={itemVariants} className="flex space-x-5 pt-4">
+            <motion.div variants={itemVariants} className="flex justify-center lg:justify-start space-x-5 pt-4">
               <motion.a
                 href="https://github.com/SaddamHosen42"
                 target="_blank"
@@ -243,7 +244,7 @@ const Hero = () => {
             </motion.div>
           </motion.div>
 
-          {/* Right Side - Animated Profile Image */}
+          {/* Mobile: Profile Image First, Desktop: Right Side */}
           <motion.div
             initial={{ opacity: 0, scale: 0.5, rotateY: 180 }}
             animate={{ opacity: 1, scale: 1, rotateY: 0 }}
@@ -254,14 +255,14 @@ const Hero = () => {
               stiffness: 60,
               damping: 15,
             }}
-            className="flex justify-center lg:justify-end relative"
+            className="flex justify-center order-1 lg:order-2 lg:justify-end relative"
           >
             <div className="relative">
               {/* Outer rotating circles - Forward rotation */}
               <motion.div
                 variants={circleVariants}
                 animate="animate"
-                className="absolute inset-0 w-80 h-80 md:w-96 md:h-96 flex items-center justify-center"
+                className="absolute inset-0 w-72 h-72 sm:w-80 sm:h-80 md:w-96 md:h-96 flex items-center justify-center"
               >
                 <svg
                   width="100%"
@@ -338,7 +339,7 @@ const Hero = () => {
               <motion.div
                 variants={reverseCircleVariants}
                 animate="animate"
-                className="absolute inset-0 w-80 h-80 md:w-96 md:h-96 flex items-center justify-center"
+                className="absolute inset-0 w-72 h-72 sm:w-80 sm:h-80 md:w-96 md:h-96 flex items-center justify-center"
               >
                 <svg
                   width="100%"
@@ -376,7 +377,7 @@ const Hero = () => {
                     ease: "easeInOut",
                   },
                 }}
-                className="relative z-10 w-64 h-64 md:w-76 md:h-76 rounded-full overflow-hidden mx-auto"
+                className="relative z-10 w-56 h-56 sm:w-64 sm:h-64 md:w-76 md:h-76 rounded-full overflow-hidden mx-auto"
                 style={{
                   background:
                     "linear-gradient(135deg, #8b5cf6, #06b6d4, #3b82f6)",

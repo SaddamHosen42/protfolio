@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';//eslint-disable-line
 import { 
-  SiReact, SiJavascript, SiHtml5, SiCss3, SiTailwindcss, SiBootstrap,
+  SiReact, SiJavascript, SiHtml5, SiCss3, SiTailwindcss, SiNextdotjs,
   SiNodedotjs, SiExpress, SiMongodb, SiFirebase,
   SiPython, SiCplusplus, SiC,
   SiGit, SiGithub, SiFigma, SiPostman, SiVercel, SiNetlify, SiNpm, SiDaisyui
@@ -47,7 +47,7 @@ const Skills = () => {
         { name: 'HTML5', icon: SiHtml5, color: '#E34F26' },
         { name: 'CSS3', icon: SiCss3, color: '#1572B6' },
         { name: 'Tailwind CSS', icon: SiTailwindcss, color: '#06B6D4' },
-        { name: 'Bootstrap', icon: SiBootstrap, color: '#7952B3' },
+        { name: 'Next.js', icon: SiNextdotjs, color: '#FFFFFF' },
         { name: 'DaisyUI', icon: SiDaisyui, color: '#5A67D8' },
       ]
     },
