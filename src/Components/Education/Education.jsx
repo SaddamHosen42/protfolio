@@ -76,23 +76,6 @@ const Education = () => {
                     </p>
                   </div>
                 </li>
-                {/* Programming Hero Web Dev Course */}
-                <li className="mb-8 ml-8">
-                  <div className="bg-gradient-to-br from-blue-900 via-gray-900 to-purple-800 border border-purple-500/40 rounded-xl p-8 shadow-xl transition-all duration-300 hover:border-purple-400">
-                    <h3 className="text-2xl font-bold text-purple-400 mb-2">
-                      Complete Web Development Course
-                    </h3>
-                    <div className="flex flex-wrap gap-2 mb-2">
-                      <span className="text-xs bg-purple-100 text-purple-700 px-2 py-1 rounded-full">
-                        Completed
-                      </span>
-                      <span className="text-xs bg-gray-700 text-gray-200 px-2 py-1 rounded-full">
-                        Jan 2025 - July 2025
-                      </span>
-                    </div>
-                    <p className="text-gray-300 text-base">Programming Hero</p>
-                  </div>
-                </li>
               </ol>
             </div>
             {/* Animation on right */}
