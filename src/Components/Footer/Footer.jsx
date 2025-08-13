@@ -53,6 +53,7 @@ const Footer = () => {
 
   const quickLinks = [
     { name: 'About', href: '#about' },
+    {name:'Education', href:'#education'},
     { name: 'Skills', href: '#skills' },
     { name: 'Projects', href: '#projects' },
     { name: 'Contact', href: '#contact' }
@@ -109,7 +110,7 @@ const Footer = () => {
               <div className="space-y-3">
                 <div className="flex items-center gap-3 text-gray-300">
                   <FiMapPin className="text-purple-400" size={18} />
-                  <span>Dinajpur, Bangladesh</span>
+                  <span>Tangail, Dhaka, Bangladesh</span>
                 </div>
                 <div className="flex items-center gap-3 text-gray-300">
                   <FiMail className="text-purple-400" size={18} />
